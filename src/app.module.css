@@ -1,0 +1,68 @@
+/* Ваш файл стилей styles.css или styles.scss */
+.todoList {
+   margin: 0;
+   counter-reset: li;
+   list-style: none;
+   background: #e8e8e8;
+   padding: 10px;
+ }
+ 
+ .todoList li {
+   display: flex; /* Добавлено: Превращаем элемент li во флекс-контейнер */
+   justify-content: space-between; /* Добавлено: Распределяем элементы по всей ширине строки */
+   align-items: center; /* Добавлено: Выравниваем элементы вертикально по центру */
+   position: relative;
+   margin: 0 0 10px 2em;
+   padding: 4px 8px;
+   border-top: 2px solid #787a77;
+   transition: 0.3s linear;
+ }
+ 
+ .todoList li:last-child {
+   margin-bottom: 0;
+ }
+ 
+ .todoList li:before {
+   content: counter(li);
+   counter-increment: li;
+   position: absolute;
+   top: -2px;
+   left: -2em;
+   width: 2em;
+   box-sizing: border-box;
+   margin-right: 8px;
+   padding: 4px;
+   border-top: 2px solid #787a77;
+   border-left: 2px solid transparent;
+   border-right: 2px solid transparent;
+   border-bottom: 2px solid transparent;
+   background: #787a77;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+   transition: 0.3s linear;
+ }
+ 
+ .todoList li:hover {
+   border-top: 2px solid #389f70;
+ }
+ 
+ .todoList li:hover:before {
+   border: 2px solid #389f70;
+   background: #98eaba;
+ }
+ 
+ /* Добавлено: Обертка для кнопок */
+ .todoList li .buttons {
+   display: flex;
+ }
+ 
+ /* Добавлено: Кнопки внутри элементов li */
+ .todoList li button {
+   margin-left: 10px;
+   padding: 5px 10px;
+   border: none;
+   background-color: #ccc;
+   cursor: pointer;
+ }
+ 
